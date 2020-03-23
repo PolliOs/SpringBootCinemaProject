@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <div th:replace="cinema/headerImports"></div>
+</head>
+<body>
+<div th:replace="cinema/navbar"></div>
+<div class="container">
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Список доступних залів</h1>
+        </div>
+    </div>
+
+    <table class="table table-hover">
+        <tr>
+            <th>Назва залу</th>
+            <th>Кількість місць</th>
+        </tr>
+        <tr th:each="hall : ${halls}">
+            <td th:text="${hall.hallTitle}"></td>
+            <td th:text="${hall.seats}"></td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

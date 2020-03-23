@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <div th:replace="admin2/headerImports"></div>
+</head>
+<body>
+<div th:replace="admin2/navbar"></div>
+
+<div class="container">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Редагування</h1>
+        </div>
+    </div>
+
+    <form class="form" th:object="${hall}" th:method="post">
+        <div th:replace="admin2/halls/addHallForm"></div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Оновити</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
