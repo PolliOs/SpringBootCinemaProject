@@ -1,26 +1,26 @@
 package com.example.demo.service;
 
-import com.example.demo.models.Book;
 import com.example.demo.models.Hall;
+import com.example.demo.service.exception.ContainerException;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public interface IHallService {
 
-    public default List<Hall> getAllHalls(){
+    default List<Hall> getAllHalls(){
         return new ArrayList<>();
     }
 
 
-    public default Hall saveHallRecord(Hall hall) throws Exception {
+    default Hall saveHallRecord(Hall hall) throws ContainerException {
         return null;
     }
-    public default Hall findHallById(Long id) {
+    default Hall findHallById(Long id) {
         return null;
     }
 
 
-    public default void deleteHallById(Long id) {
+    default void deleteHallById(Long id) {
     }
 }

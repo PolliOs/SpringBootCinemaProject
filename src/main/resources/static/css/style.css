@@ -4,3 +4,25 @@
 .edit-btn{
     background-color:#80ff80;
 }
+.split-left {
+    height: 100%;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    padding-top: 20px;
+}
+.split-right {
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    padding-top:10%;
+    padding-left:15%;
+    right: 0;
+}
+
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -20%;
+}

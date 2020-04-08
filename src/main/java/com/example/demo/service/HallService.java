@@ -4,6 +4,7 @@ import com.example.demo.models.Book;
 import com.example.demo.models.Hall;
 import com.example.demo.repository.BookRepository;
 import com.example.demo.repository.HallsRepository;
+import com.example.demo.service.exception.ContainerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,12 +29,21 @@ public class HallService implements IHallService {
     }
 
     @Override
-    public Hall saveHallRecord(Hall hallToAdd) throws Exception {
+    public Hall saveHallRecord(Hall hallToAdd) throws ContainerException {
+        ContainerException ex = new ContainerException();
+        boolean flag = false;
         for(Hall hall:hallsRepository.findAll()){
             if(hallToAdd.getHallTitle().equals(hall.getHallTitle()) && !hallToAdd.equals(hall)){
-                System.out.println("DUPLICATE!");
-                throw new Exception() ;
+                ex.add(new Exception("duplicate"));
+                flag=true;
             }
+        }
+        if(hallToAdd.getSeats()<0){
+            ex.add(new Exception("seats"));
+            flag=true;
+        }
+        if(flag){
+            throw ex;
         }
         return hallsRepository.save(hallToAdd);
     }

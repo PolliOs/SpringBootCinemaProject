@@ -1,6 +1,7 @@
 package com.example.demo.models.validators;
 
 import com.example.demo.models.Book;
+import com.example.demo.models.Genre;
 import com.example.demo.models.Hall;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -9,27 +10,21 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 @Component
-@Qualifier("hallValidator")
-public class HallValidator implements Validator {
+@Qualifier("genreValidator")
+public class GenreValidator implements Validator {
 
     @Override
     public boolean supports(Class<?> aClass) {
-        return aClass.isAssignableFrom(Hall.class);
+        return aClass.isAssignableFrom(Genre.class);
     }
 
     @Override
     public void validate(Object o, Errors errors) {
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "hallTitle", "msg.field.required");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "seats", "msg.field.required");
-        Hall h = (Hall) o;
-
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "genreTitle", "msg.field.required");
     }
 
     public final void duplicateError(final Errors errors){
-        errors.rejectValue("hallTitle", "error.halls.duplicate");
-    }
-    public final void seatsError(final Errors errors) {
-        errors.rejectValue("seats", "error.halls.seats");
+        errors.rejectValue("genreTitle", "error.genres.duplicate");
     }
 
 

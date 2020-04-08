@@ -6,6 +6,7 @@ import com.example.demo.models.validators.BookValidator;
 import com.example.demo.models.validators.HallValidator;
 import com.example.demo.service.IBookService;
 import com.example.demo.service.IHallService;
+import com.example.demo.service.exception.ContainerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -51,9 +52,14 @@ public class EditHallController {
         }
         try {
             hallService.saveHallRecord(hallToUpdate);
-        }catch (Exception ex){
+        }catch (ContainerException exceptions){
             HallValidator addHallValidator = new HallValidator();
-            addHallValidator.custError(result);
+            for(Exception ex: exceptions.getExceptions()) {
+                if (ex.getMessage().equals("duplicate"))
+                    addHallValidator.duplicateError(result);
+                if (ex.getMessage().equals("seats"))
+                    addHallValidator.seatsError(result);
+            }
             mv.setViewName("admin2/halls/editHall");
             mv.addObject("hall", hallToUpdate);
             return mv;
