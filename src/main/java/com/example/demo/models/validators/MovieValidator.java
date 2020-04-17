@@ -2,14 +2,10 @@ package com.example.demo.models.validators;
 
 import com.example.demo.models.Movie;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.ldap.embedded.EmbeddedLdapProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-
-import javax.xml.validation.ValidatorHandler;
-import java.util.Objects;
 
 @Component
 @Qualifier("movieValidator")

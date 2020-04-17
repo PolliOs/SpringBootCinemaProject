@@ -3,6 +3,7 @@ package com.example.demo.models;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 /**
@@ -23,6 +24,9 @@ public class Hall {
     @Column(name = "seats")
     @NotNull
     private Integer seats;
+
+    @OneToMany(mappedBy="hall")
+    private Set<Session> sessions;
 
     /**
      * @return the id
@@ -104,14 +108,11 @@ public class Hall {
         } else if (!hallTitle.equals(other.hallTitle))
             return false;
         if (id == null) {
-            if (other.id != null)
-                return false;
+            return other.id == null;
         } else if (!id.equals(other.id))
         if (seats == null) {
-            if (other.seats != null)
-                return false;
-        } else if (!seats.equals(other.seats))
-            return false;
+            return other.seats == null;
+        } else return seats.equals(other.seats);
         return true;
     }
 

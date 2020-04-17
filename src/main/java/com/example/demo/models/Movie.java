@@ -33,6 +33,10 @@ public class Movie {
     )
     Set<Genre> genresOfMovie;
 
+    @OneToMany(mappedBy="movie")
+    private Set<Session> sessions;
+
+
     /**
      * @return the genresOfMovie
      */
