@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class EditSessionController {
+public class AddNewSessionController {
     @Autowired
     @Qualifier("sessionValidator")
     Validator sessionValidator;
@@ -41,24 +41,23 @@ public class EditSessionController {
     @Autowired
     IHallService hallService;
 
-    @GetMapping("/admin2/sessions/editSession/{id}")
-    public ModelAndView getEditPage(@PathVariable("id") Long id) {
-        ModelAndView mv = new ModelAndView("admin2/sessions/editSession");
-        Session session = sessionService.findSessionById(id);
-        addAllData(mv, session);
+    @GetMapping("/admin2/sessions/addSession")
+    public ModelAndView getIndexPage() {
+        ModelAndView mv = new ModelAndView("admin2/sessions/addSession");
+        addAllData(mv, new Session());
         return mv;
     }
 
-    @PostMapping("/admin2/sessions/editSession/{id}")
-    public ModelAndView updateSessionInfo(@ModelAttribute("session") @Validated Session sessionToUpdate, BindingResult result) {
+    @PostMapping("/admin2/sessions/addSession")
+    public ModelAndView updateSessionInfo(@ModelAttribute("session") @Validated Session sessionToAdd, BindingResult result) {
         ModelAndView mv = new ModelAndView("redirect:/admin2/sessions");
         if (result.hasErrors()) {
-            mv.setViewName("admin2/sessions/editSession");
-            addAllData(mv, sessionToUpdate);
+            mv.setViewName("admin2/sessions/addSession");
+            addAllData(mv, sessionToAdd);
             return mv;
         }
         try {
-            sessionService.saveSessionRecord(sessionToUpdate);
+            sessionService.saveSessionRecord(sessionToAdd);
         }catch (ContainerException exceptions){
             SessionValidator addSessionValidator = new SessionValidator();
             for(Exception ex: exceptions.getExceptions()) {
@@ -68,14 +67,14 @@ public class EditSessionController {
                     addSessionValidator.collisionError(result);
                 }
             }
-            mv.setViewName("admin2/sessions/editSession");
-            addAllData(mv, sessionToUpdate);
+            mv.setViewName("admin2/sessions/addSession");
+            addAllData(mv, sessionToAdd);
             return mv;
         }
         return mv;
     }
 
-    private void addAllData(ModelAndView mv, Session sessionToUpdate) {
+    private void addAllData(ModelAndView mv, Session sessionToAdd) {
         List<Movie> movieList = movieService.getAllMovies();
         List<Hall> hallList = hallService.getAllHalls();
         List<String> days = new ArrayList<>(
@@ -87,7 +86,7 @@ public class EditSessionController {
                         "Субота",
                         "Неділя"));
 
-        mv.addObject("session", sessionToUpdate);
+        mv.addObject("session", sessionToAdd);
         mv.addObject("movies", movieList);
         mv.addObject("halls", hallList);
         mv.addObject("days", days);

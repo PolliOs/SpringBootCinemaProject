@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.models.Movie;
 import com.example.demo.repository.MoviesRepository;
+import com.example.demo.repository.SessionsRepository;
 import com.example.demo.service.exception.ContainerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,9 @@ public class MovieService implements IMovieService {
 
     @Autowired
     MoviesRepository moviesRepository;
+
+    @Autowired
+    SessionsRepository sessionRepository;
 
     @Override
     public List<Movie> getAllMovies() {
@@ -60,6 +64,7 @@ public class MovieService implements IMovieService {
     @Override
     public void deleteMovieById(Long id) {
         Movie movieToDelete = moviesRepository.findMovieById(id);
+        sessionRepository.deleteByMovieId(movieToDelete.getId());
         moviesRepository.delete(movieToDelete);
     }
 }

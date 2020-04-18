@@ -1,14 +1,9 @@
 package com.example.demo.controllers.admin2.movies;
-import com.example.demo.models.Book;
+
 import com.example.demo.models.Genre;
-import com.example.demo.models.Hall;
 import com.example.demo.models.Movie;
-import com.example.demo.models.validators.BookValidator;
-import com.example.demo.models.validators.HallValidator;
 import com.example.demo.models.validators.MovieValidator;
-import com.example.demo.service.IBookService;
 import com.example.demo.service.IGenreService;
-import com.example.demo.service.IHallService;
 import com.example.demo.service.IMovieService;
 import com.example.demo.service.exception.ContainerException;
 import org.springframework.beans.factory.annotation.Autowired;

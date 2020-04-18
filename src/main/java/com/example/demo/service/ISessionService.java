@@ -1,7 +1,6 @@
 package com.example.demo.service;
 
 
-import com.example.demo.models.Movie;
 import com.example.demo.models.Session;
 import com.example.demo.service.exception.ContainerException;
 

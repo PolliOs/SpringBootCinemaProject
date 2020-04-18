@@ -1,15 +1,13 @@
 package com.example.demo.service;
 
-import com.example.demo.models.Book;
 import com.example.demo.models.Hall;
-import com.example.demo.repository.BookRepository;
 import com.example.demo.repository.HallsRepository;
+import com.example.demo.repository.SessionsRepository;
 import com.example.demo.service.exception.ContainerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Service("hallService")
@@ -17,6 +15,9 @@ public class HallService implements IHallService {
 
     @Autowired
     HallsRepository hallsRepository;
+
+    @Autowired
+    SessionsRepository sessionsRepository;
 
     @Override
     public List<Hall> getAllHalls() {
@@ -56,6 +57,7 @@ public class HallService implements IHallService {
     @Override
     public void deleteHallById(Long id) {
         Hall hallToDelete = hallsRepository.findHallById(id);
+        sessionsRepository.deleteByHallId(hallToDelete.getId());
         hallsRepository.delete(hallToDelete);
     }
 }

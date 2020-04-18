@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
+    <title>Додати новий фільм</title>
     <div th:replace="admin2/headerImports"></div>
-    <title>add Hall</title>
+    <meta charset="UTF-8">
 </head>
-<meta charset="UTF-8">
-<title>Додати новий зал</title>
 <body>
 <div th:replace="admin2/navbar"></div>
 <div class="container">
     <div class="container">
         <div class="jumbotron">
-            <h1>Створити зал</h1>
+            <h1>Створити фільм</h1>
         </div>
     </div>
 
-    <form class="form" th:object="${hall}" th:method="post">
+    <form class="form" th:object="${session}" th:method="post">
         <input type="hidden" th:name="${_csrf.parameterName}"
                th:value="${_csrf.token}" />
-        <div th:replace="admin2/halls/addHallForm"></div>
+        <div th:replace="admin2/sessions/addSessionForm"></div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Додати</button>
         </div>

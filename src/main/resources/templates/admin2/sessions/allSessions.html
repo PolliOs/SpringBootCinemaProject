@@ -32,7 +32,7 @@
                 <td th:text="${#dates.format(seance.time, 'HH:mm')}"></td>
                 <td th:text="${seance.price}"></td>
                 <td>
-                    <form th:attr="action=@{/admin2/sessions/editSession/seance.id}"
+                    <form th:attr="action=@{/admin2/sessions/editSession/} + ${seance.id}"
                           th:method="get">
                         <input type="hidden" th:name="${_csrf.parameterName}"
                                th:value="${_csrf.token}"/>
@@ -43,7 +43,7 @@
                 </td>
                 <td>
                     <form th:method="post"
-                          th:attr="action=@{/admin2/sessions/deleteSession/seance.id}">
+                          th:attr="action=@{/admin2/sessions/deleteSession/}+${seance.id}">
                         <input type="hidden" th:name="${_csrf.parameterName}"
                                th:value="${_csrf.token}"/>
                         <button type="submit" class="btn btn-danger btn-lg" onclick="return confirm('Ви впевнені, що хочете видалити цей сеанс?');" >

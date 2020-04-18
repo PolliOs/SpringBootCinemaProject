@@ -33,7 +33,7 @@ public class Movie {
     )
     Set<Genre> genresOfMovie;
 
-    @OneToMany(mappedBy="movie")
+    @OneToMany(mappedBy="movie", orphanRemoval = true)
     private Set<Session> sessions;
 
 
@@ -156,6 +156,14 @@ public class Movie {
         if (duration == null) {
             return other.duration == null;
         }else return duration.equals(other.duration);
+    }
+
+    public Set<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(Set<Session> sessions) {
+        this.sessions = sessions;
     }
 }
 

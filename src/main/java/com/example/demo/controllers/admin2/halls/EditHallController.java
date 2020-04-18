@@ -1,10 +1,7 @@
 package com.example.demo.controllers.admin2.halls;
 
-import com.example.demo.models.Book;
 import com.example.demo.models.Hall;
-import com.example.demo.models.validators.BookValidator;
 import com.example.demo.models.validators.HallValidator;
-import com.example.demo.service.IBookService;
 import com.example.demo.service.IHallService;
 import com.example.demo.service.exception.ContainerException;
 import org.springframework.beans.factory.annotation.Autowired;

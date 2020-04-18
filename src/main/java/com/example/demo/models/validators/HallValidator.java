@@ -1,6 +1,5 @@
 package com.example.demo.models.validators;
 
-import com.example.demo.models.Book;
 import com.example.demo.models.Hall;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -21,8 +20,6 @@ public class HallValidator implements Validator {
     public void validate(Object o, Errors errors) {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "hallTitle", "msg.field.required");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "seats", "msg.field.required");
-        Hall h = (Hall) o;
-
     }
 
     public final void duplicateError(final Errors errors){

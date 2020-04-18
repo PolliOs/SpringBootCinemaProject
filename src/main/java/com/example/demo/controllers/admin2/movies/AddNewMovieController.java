@@ -63,13 +63,13 @@ public class AddNewMovieController {
             movieService.saveMovieRecord(movie);
         }catch (ContainerException exceptions){
             MovieValidator addMovieValidator = new MovieValidator();
-            for(Exception ex: exceptions.getExceptions()) {
+            exceptions.getExceptions().forEach(ex -> {
                 if (ex.getMessage().equals("duplicate"))
                     addMovieValidator.duplicateError(result);
                 if (ex.getMessage().equals("year"))
                     addMovieValidator.yearError(result);
-                if(ex.getMessage().equals("duration")) addMovieValidator.durationError(result);
-            }
+                if (ex.getMessage().equals("duration")) addMovieValidator.durationError(result);
+            });
             mv.setViewName("admin2/movies/addMovie");
             mv.addObject("movie", movie);
             return mv;

@@ -23,7 +23,7 @@
                     <td th:text="${genre.genreTitle}"></td>
                     <td>
                         <form th:method="post"
-                              th:attr="action=@{/admin2/genres/deleteGenre/genre.id}">
+                              th:attr="action=@{/admin2/genres/deleteGenre/} + ${genre.id}">
                             <input type="hidden" th:name="${_csrf.parameterName}"
                                    th:value="${_csrf.token}"/>
                             <button type="submit" class="btn btn-danger btn-lg" onclick="return confirm('Ви впевнені, що хочете видалити цей жанр?');" >
@@ -35,7 +35,7 @@
             </table>
         </div>
     <div class="split-right">
-        <form class="form" th:object="${genre}" th:method="post">
+        <form class="form" th:object="${genre}" th:method="post" th:attr="action=@{/admin2/genres}">
             <input type="hidden" th:name="${_csrf.parameterName}"
                    th:value="${_csrf.token}" />
             <input type="hidden" th:name="${_csrf.parameterName}"

@@ -1,8 +1,6 @@
 package com.example.demo.models.validators;
 
-import com.example.demo.models.Book;
 import com.example.demo.models.Genre;
-import com.example.demo.models.Hall;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

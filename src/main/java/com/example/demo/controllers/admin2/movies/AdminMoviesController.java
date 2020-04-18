@@ -1,8 +1,6 @@
 package com.example.demo.controllers.admin2.movies;
 
-import com.example.demo.models.Genre;
 import com.example.demo.models.Movie;
-import com.example.demo.service.IGenreService;
 import com.example.demo.service.IMovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

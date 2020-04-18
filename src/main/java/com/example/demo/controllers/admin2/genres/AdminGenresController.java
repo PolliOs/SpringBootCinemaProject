@@ -1,8 +1,7 @@
 package com.example.demo.controllers.admin2.genres;
+
 import com.example.demo.models.Genre;
-import com.example.demo.models.Hall;
 import com.example.demo.service.IGenreService;
-import com.example.demo.service.IHallService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
