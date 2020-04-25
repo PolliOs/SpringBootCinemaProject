@@ -29,3 +29,6 @@ ul {
 .without_ampm::-webkit-datetime-edit-ampm-field {
     display: none;
 }
+.active-nav{
+    background-color: #bf80ff;
+}

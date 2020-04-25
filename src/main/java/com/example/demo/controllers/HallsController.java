@@ -1,4 +1,4 @@
-package com.example.demo.controllers.admin2.halls;
+package com.example.demo.controllers;
 
 import com.example.demo.models.Hall;
 import com.example.demo.service.IHallService;

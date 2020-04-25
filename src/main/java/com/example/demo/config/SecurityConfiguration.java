@@ -33,7 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/app/**").permitAll().antMatchers("/admin/**").hasAnyAuthority("ADMIN")
+        http.authorizeRequests().antMatchers("/cinema/**").permitAll().antMatchers("/admin2/**").hasAnyAuthority("ADMIN")
                 .and()
                 .authorizeRequests().and().formLogin()
                 .usernameParameter("username")
@@ -41,6 +41,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .and().logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/admin/");
+                .logoutSuccessUrl("/admin2/");
     }
 }
