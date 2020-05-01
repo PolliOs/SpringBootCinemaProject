@@ -5,41 +5,41 @@
     <div class="form-group">
         <input type="hidden" class="form-control" th:field="${session.id}"/>
     </div>
-    <div class="form-group blu-margin">
-        <label for="movie">Назва фільму</label>
+    <div class="form-group blu-margin add-form-group">
+        <label class="add-label" for="movie">Назва фільму</label>
         <select class="form-control" th:field="${session.movie}"  id="movie">
             <option th:each="movie : ${movies}" th:value="${movie.id}" th:text="${movie.movieTitle}"></option>
         </select>
     </div>
-    <div class="form-group blu-margin">
-        <label for="hall">Назва залу</label>
+    <div class="form-group blu-margin add-form-group">
+        <label class="add-label" for="hall">Назва залу</label>
         <select class="form-control" th:field="${session.hall}"  id="hall">
             <option th:each="hall : ${halls}" th:value="${hall.id}" th:text="${hall.hallTitle}"></option>
         </select>
     </div>
-    <div class="form-group">
-        <label th:if="${#fields.hasErrors('hall')}" class="errorMsg"
+    <div class="form-group add-form-group">
+        <label th:if="${#fields.hasErrors('hall')}" class="add-label errorMsg"
                th:errors="*{hall}"></label>
     </div>
-    <div class="form-group blu-margin">
-        <label for="day">День тижня</label>
+    <div class="form-group blu-margin add-form-group">
+        <label  class="add-label" for="day">День тижня</label>
         <select class="form-control" th:field="${session.day}"  id="day">
             <option th:each="day : ${days}" th:value="${day}" th:text="${day}"></option>
         </select>
     </div>
-    <div class="form-group">
-        <label>Час</label>
+    <div class="form-group add-form-group">
+        <label class="add-label">Час</label>
         <input type="time" class="form-control" th:field="${session.time}" />
     </div>
 </div>
 
-    <div class="form-group">
-        <label for="price">Ціна сеансу</label> <input type="text"
+    <div class="form-group add-form-group">
+        <label class="add-label" for="price">Ціна сеансу</label> <input type="text"
                                                           class="form-control" th:field="${session.price}" id="price"
                                                           placeholder="Ціна" />
     </div>
-    <div class="form-group">
-        <label th:if="${#fields.hasErrors('price')}" class="errorMsg"
+    <div class="form-group add-form-group">
+        <label th:if="${#fields.hasErrors('price')}" class="add-label errorMsg"
                th:errors="*{price}"></label>
     </div>
 <div class="form-row"></div>

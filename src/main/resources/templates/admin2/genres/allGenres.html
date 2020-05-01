@@ -3,25 +3,26 @@
 <head>
     <title>Genres Panel</title>
     <meta charset="UTF-8">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
     <div th:replace="admin2/headerImports"></div>
 </head>
-<body>
+<body class="genresPage-style">
 <div th:replace="admin2/navbar"></div>
 <div class="container">
     <div class="container">
-        <div class="jumbotron">
-            <h1>Список доступних жанрів у нашому кінотеатрі</h1>
+        <div>
+            <h1 class="h15">Список доступних жанрів у нашому кінотеатрі</h1>
         </div>
     </div>
     <div class="split-left">
-            <table class="table table-hover">
+            <table class="genres-table table" style="width:80%">
                 <tr>
-                    <th>Назва</th>
-                    <th>Видалити</th>
+                    <th style="border-top:transparent">Назва</th>
+                    <th style="border-top:transparent">Видалити</th>
                 </tr>
                 <tr th:each="genre : ${genres}">
-                    <td th:text="${genre.genreTitle}"></td>
-                    <td>
+                    <td style="border-top:transparent" th:text="${genre.genreTitle}"></td>
+                    <td style="border-top:transparent">
                         <form th:method="post"
                               th:attr="action=@{/admin2/genres/deleteGenre/} + ${genre.id}">
                             <input type="hidden" th:name="${_csrf.parameterName}"
@@ -40,22 +41,22 @@
                    th:value="${_csrf.token}" />
             <input type="hidden" th:name="${_csrf.parameterName}"
                    th:value="${_csrf.token}" xmlns:th="http://www.w3.org/1999/xhtml"/>
-            <div class="form-row" xmlns:th="http://www.w3.org/1999/xhtml">
-                <div class="form-group">
+            <div class="form-row add-genre" xmlns:th="http://www.w3.org/1999/xhtml">
+                <div class="form-group genre-form-group">
                     <input type="hidden" class="form-control" th:field="${genre.id}"/>
                 </div>
-                <div class="form-group">
+                <div class="form-group genre-form-group">
                     <label for="genreTitle">Назва жанру</label> <input type="text"
                                                                        class="form-control" th:field="${genre.genreTitle}"
                                                                        id="genreTitle"
                                                                        placeholder="назва жанру" style="width: 45%"/>
                 </div>
-                <div class="form-group">
+                <div class="form-group genre-form-group">
                     <label th:if="${#fields.hasErrors('genreTitle')}" class="errorMsg"
                            th:errors="*{genreTitle}"></label>
                 </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Додати</button>
+                <div class="form-group genre-form-group">
+                    <button type="submit" class="btn add-btn">Додати</button>
                 </div>
             </div>
         </form>

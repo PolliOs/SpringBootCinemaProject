@@ -3,14 +3,15 @@
 <head>
     <meta charset="utf-8">
     <div th:replace="cinema/headerImports"></div>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
     <title>Index page</title>
 </head>
-<body>
+<body class="mainPage-style">
 <div th:replace="cinema/navbar"></div>
 
 <div class="container">
-    <div class="jumbotron">
-        <h1>Вітаємо у нашому кінотеатрі!</h1>
+    <div class="mainPgDiv">
+        <h1 class="h11">Вітаємо у нашому кінотеатрі!</h1>
     </div>
 </div>
 

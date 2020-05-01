@@ -2,7 +2,11 @@
     color:red;
 }
 .edit-btn{
-    background-color:#80ff80;
+    background-color:transparent;
+}
+.edit-btn-movies{
+    background-color: #ffad33;
+    color:black;
 }
 .split-left {
     height: 100%;
@@ -17,9 +21,8 @@
     position: absolute;
     padding-top:10%;
     padding-left:15%;
-    right: 0;
+    right: 10%;
 }
-
 
 ul {
     margin-top: 0;
@@ -31,4 +34,177 @@ ul {
 }
 .active-nav{
     background-color: #bf80ff;
+}
+.movies-table{
+    width: 80%;
+    margin-left: -15%;
+    margin-top:3%
+}
+.genres-table{
+    width: 80%;
+    margin-left: -15%;
+    margin-top:10%
+}
+.sessions-table{
+    width: 65%;
+    margin-left: -13%;
+    margin-top:3%
+}
+.mainPgDiv{
+    padding-left: 50%;
+}
+.my-container-style{
+    background: lightskyblue;
+    opacity: 0.97;
+}
+.mainPage-style{
+    background-image: url(/img/img1.jpg);
+    background-position: unset;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hallsPage-style{
+    background-image: url(/img/halls.jpg);
+    background-position: unset;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+}
+.addPage-style{
+    background-image: url(/img/popcorn.jpg);
+    background-position: unset;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.loginPage-style{
+    background-image: url(/img/loginBg.jpg);
+    background-position: unset;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.moviesPage-style{
+    background-image: url(/img/movies.jpg);
+    background-position: unset;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sessionsPage-style{
+    background-image: url(/img/sessionsbg.jpg);
+    background-position: unset;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.genresPage-style{
+    background-image: url(/img/genresBg.jpg);
+    background-position: unset;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: sticky;
+}
+.halls-table{
+    background-color: rgb(255, 187, 51, 0.7);
+}
+
+.h11{
+    font-weight: 500;
+    line-height: 1.3;
+    font-family: "Times New Roman", Times, serif;
+    color: inherit;
+    text-align: center;
+    padding-top: 20%;
+    font-size:70px;
+}
+.h12{
+    font-weight: 500;
+    line-height: 1.3;
+    font-family: "Times New Roman", Times, serif;
+    color: inherit;
+    text-align: center;
+    font-size:70px;
+}
+.h13{
+    font-weight: 500;
+    line-height: 1.3;
+    font-family: "Times New Roman", Times, serif;
+    margin-top: -1%;
+    text-align: center;
+    margin-right: 60%;
+    font-size: 30px;
+    color: white;
+}
+.h14{
+    font-weight: 500;
+    line-height: 1.3;
+    font-family: "Times New Roman", Times, serif;
+    color: inherit;
+    text-align: center;
+    font-size:70px;
+    margin-left: -65%;
+}
+.h15{
+    font-weight: 500;
+    line-height: 1.3;
+    font-family: "Times New Roman", Times, serif;
+    color: inherit;
+    text-align: center;
+    font-size: 60px;
+    margin-left: -25%;
+    margin-top: -1%;
+}
+.add-form-group{
+    width: 60%;
+}
+.add-label{
+    font-weight: 900;
+    font-size: larger;
+}
+.my-navbar{
+    background-color: black;
+    border-color: black;
+}
+.navbar-text{
+    color: #ffad33;
+    font-size:20px
+}
+.hallsTd{
+    color:#ffad33;
+}
+.moviesTd{
+    color:#ffad33;
+}
+.moviesTh{
+    color:#ffad33;
+    font-weight: bold;
+}
+.hallsTh{
+    font-weight: bold;
+}
+
+.add-btn{
+    background-color: black;
+    color:#fff;
+}
+.add-btn:hover{
+    color:whitesmoke;
+}
+.add-genre{
+    margin-top: 50%;
+}
+.genre-form-group{
+    margin-left: -80%;
+}
+.loginCentre{
+    margin-left: 38%;
+    margin-top: 27%;
+    font-weight: bold;
+}
+.passCentre{
+    margin-left: 38%;
+    margin-top: 2%;
+    font-weight: bold;
+}
+.loginError{
+    margin-left: 38%;
+    font-weight: bold;
+    color:red;
 }

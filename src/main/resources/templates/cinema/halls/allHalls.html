@@ -3,22 +3,23 @@
 <head>
     <meta charset="utf-8">
     <div th:replace="cinema/headerImports"></div>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
     <title>All Halls page</title>
 </head>
-<body>
+<body class="hallsPage-style">
 <div th:replace="cinema/navbar"></div>
 <div class="container">
 
     <div class="container">
-        <div class="jumbotron">
-            <h1>Список доступних залів</h1>
+        <div>
+            <h1 class="h12">Список доступних залів</h1>
         </div>
     </div>
 
-    <table class="table table-hover">
+    <table class="table halls-table">
         <tr>
-            <th>Назва залу</th>
-            <th>Кількість місць</th>
+            <th class="hallsTh">Назва залу</th>
+            <th class="hallsTh">Кількість місць</th>
         </tr>
         <tr th:each="hall : ${halls}">
             <td th:text="${hall.hallTitle}"></td>

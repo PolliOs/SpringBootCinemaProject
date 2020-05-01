@@ -1,14 +1,13 @@
-<nav class="navbar navbar-default" xmlns:th="http://www.w3.org/1999/xhtml" style="background-color: rgb(204, 153, 255)">
+<nav class="navbar  my-navbar" xmlns:th="http://www.w3.org/1999/xhtml" >
     <div class="container-fluid" >
-        <div class="navbar-header">
-            <a class="navbar-brand" th:href="@{/admin2}">Адмін</a>
+        <div class="navbar-text  navbar-header">
+            <a class="navbar-brand"  style="font-size:23px" th:href="@{/admin2}">Адмін</a>
         </div>
         <ul class="nav navbar-nav" >
-            <li class="active active-nav" style="background-color:rgb(204, 153, 255) " ><a th:href="@{/admin2}">Головна</a></li>
-            <li><a th:href="@{/admin2/halls}">Зали</a></li>
-            <li><a th:href="@{/admin2/genres}">Жанри</a></li>
-            <li><a th:href="@{/admin2/movies}">Фільми</a></li>
-            <li><a th:href="@{/admin2/sessions}">Сеанси</a></li>
+            <li><a class="navbar-text" th:href="@{/admin2/halls}">Зали</a></li>
+            <li><a class="navbar-text" th:href="@{/admin2/genres}">Жанри</a></li>
+            <li><a class="navbar-text" th:href="@{/admin2/movies}">Фільми</a></li>
+            <li><a class="navbar-text" th:href="@{/admin2/sessions}">Сеанси</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a th:href="@{/logout}"><span

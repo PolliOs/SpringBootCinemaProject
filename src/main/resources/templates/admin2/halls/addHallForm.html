@@ -5,23 +5,23 @@
     <div class="form-group">
         <input type="hidden" class="form-control" th:field="${hall.id}"/>
     </div>
-    <div class="form-group">
-        <label for="hallTitle">Назва залу</label> <input type="text"
+    <div class="form-group add-form-group">
+        <label class="add-label" for="hallTitle">Назва залу</label> <input type="text"
                                                          class="form-control" th:field="${hall.hallTitle}"
                                                          id="hallTitle"
                                                          placeholder="hall title"/>
     </div>
-    <div class="form-group">
-        <label th:if="${#fields.hasErrors('hallTitle')}" class="errorMsg"
+    <div class="form-group add-form-group">
+        <label class="add-label errorMsg" th:if="${#fields.hasErrors('hallTitle')}"
                th:errors="*{hallTitle}"></label>
     </div>
-    <div class="form-group">
-        <label for="seats">Кількість місць</label> <input type="text"
+    <div class="form-group add-form-group">
+        <label class="add-label" for="seats">Кількість місць</label> <input type="text"
                                                    class="form-control" th:field="${hall.seats}" id="seats"
                                                    placeholder="seats" />
     </div>
-    <div class="form-group">
-        <label th:if="${#fields.hasErrors('seats')}" class="errorMsg"
+    <div class="form-group add-form-group">
+        <label class="add-label errorMsg" th:if="${#fields.hasErrors('seats')}"
                th:errors="*{seats}"></label>
     </div>
 </div>

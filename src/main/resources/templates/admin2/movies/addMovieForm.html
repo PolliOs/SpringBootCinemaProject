@@ -5,46 +5,39 @@
     <div class="form-group">
         <input type="hidden" class="form-control" th:field="${movie.id}"/>
     </div>
-    <div class="form-group">
-        <label for="movieTitle">Назва фільму</label> <input type="text"
+    <div class="form-group add-form-group">
+        <label class="add-label" for="movieTitle">Назва фільму</label> <input type="text"
                                                          class="form-control" th:field="${movie.movieTitle}"
                                                          id="movieTitle"
                                                          placeholder="Назва фільму"/>
     </div>
-    <div class="form-group">
-        <label th:if="${#fields.hasErrors('movieTitle')}" class="errorMsg"
+    <div class="form-group add-form-group">
+        <label th:if="${#fields.hasErrors('movieTitle')}" class="errorMsg add-label"
                th:errors="*{movieTitle}"></label>
     </div>
-    <div class="form-group">
-        <label for="year">Рік випуску</label> <input type="text"
+    <div class="form-group add-form-group">
+        <label class="add-label" for="year">Рік випуску</label> <input type="text"
                                                           class="form-control" th:field="${movie.year}" id="year"
                                                           placeholder="Рік випуску" />
     </div>
-    <div class="form-group">
-        <label th:if="${#fields.hasErrors('year')}" class="errorMsg"
+    <div class="form-group add-form-group">
+        <label th:if="${#fields.hasErrors('year')}" class="errorMsg add-label"
                th:errors="*{year}"></label>
     </div>
-    <div class="form-group">
-        <label for="duration">Тривалість</label> <input type="text"
+    <div class="form-group add-form-group">
+        <label class="add-label" for="duration">Тривалість</label> <input type="text"
                                                          class="form-control" th:field="${movie.duration}" id="duration"
                                                          placeholder="тривалість у хвилинах" />
     </div>
-    <div class="form-group">
-        <label th:if="${#fields.hasErrors('duration')}" class="errorMsg"
+    <div class="form-group add-form-group">
+        <label th:if="${#fields.hasErrors('duration')}" class="errorMsg add-label"
                th:errors="*{duration}"></label>
     </div>
-<!--    <table class="table table-hover">-->
-<!--        <tr th:each="index: ${#numbers.sequence(0,#lists.size(genres),3)}">-->
-<!--            <th th:text="${genres[index].genreTitle}"></th>-->
-<!--            <th th:if="${index+1 < #lists.size(genres)}" th:text="${genres[index + 1].genreTitle} + HI" ></th>-->
-<!--            <th th:if="${index+2 < #lists.size(genres)}" th:text="${genres[index + 2].genreTitle}" ></th>-->
-<!--        </tr>-->
-<!--    </table>-->
     <table class="table table-hover">
         <tr th:each="genre: ${genres}">
             <div class="checkbox">
                 <input type="checkbox" style="margin-left: -5px" th:field="*{genresOfMovie}" th:value="${genre.id}">
-                <label th:text="${genre.genreTitle}"></label>
+                <label class= "add-label" th:text="${genre.genreTitle}"></label>
             </div>
         </tr>
     </table>

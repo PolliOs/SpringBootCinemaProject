@@ -2,16 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <div th:replace="admin2/headerImports"></div>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
     <title>add Hall</title>
 </head>
 <meta charset="UTF-8">
 <title>Додати новий зал</title>
-<body>
+<body class="addPage-style">
 <div th:replace="admin2/navbar"></div>
 <div class="container">
     <div class="container">
-        <div class="jumbotron">
-            <h1>Створити зал</h1>
+        <div>
+            <h1 class="h14">Створити зал</h1>
         </div>
     </div>
 
@@ -20,7 +21,7 @@
                th:value="${_csrf.token}" />
         <div th:replace="admin2/halls/addHallForm"></div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Додати</button>
+            <button type="submit" class="btn add-btn">Додати</button>
         </div>
     </form>
 </div>

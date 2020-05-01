@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Редагування фільму</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
     <div th:replace="admin2/headerImports"></div>
 </head>
-<body>
+<body class="addPage-style">
 <div th:replace="admin2/navbar"></div>
 
 <div class="container">
     <div class="container">
-        <div class="jumbotron">
-            <h1>Редагування</h1>
+        <div>
+            <h1 class="h14">Редагування</h1>
         </div>
     </div>
 
@@ -20,7 +21,7 @@
                th:value="${_csrf.token}" />
         <div th:replace="admin2/movies/addMovieForm"></div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Оновити</button>
+            <button type="submit" class="btn add-btn">Оновити</button>
         </div>
     </form>
 </div>

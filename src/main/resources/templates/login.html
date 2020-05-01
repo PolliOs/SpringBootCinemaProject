@@ -4,18 +4,19 @@
 <head>
     <meta charset="utf-8">
     <title>Spring Security Example </title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
-<body>
-<div th:if="${param.error}">
-    Invalid username and password.
+<body class="loginPage-style">
+<div class="loginError" th:if="${param.error}">
+    Неправильно введено логін або пароль. Спробуйте ще раз.
 </div>
 <div th:if="${param.logout}">
-    You have been logged out.
+    Ви вийшли з режиму адміністратора.
 </div>
 <form th:action="@{/login}" method="post">
-    <div><label> Логін : <input type="text" name="username"/> </label></div>
-    <div><label> Пароль: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Sign In"/></div>
+    <div class="loginCentre"><label> Логін : <input type="text" name="username"/> </label></div>
+    <div class="passCentre"><label> Пароль: <input type="password" name="password"/> </label></div>
+    <div class="passCentre"><input type="submit" value="Увійти" /></div>
 </form>
 </body>
 </html>
