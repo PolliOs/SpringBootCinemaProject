@@ -33,7 +33,7 @@ public class Movie {
     )
     Set<Genre> genresOfMovie;
 
-    @OneToMany(mappedBy="movie", orphanRemoval = true)
+    @OneToMany(mappedBy="movie")
     private Set<Session> sessions;
 
 
